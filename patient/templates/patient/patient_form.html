@@ -1,0 +1,18 @@
+{% extends 'patient/patient_base.html' %}
+{% load bootstrap4 %}
+{% block patient %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3>Profile</h3>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" value="Book">
+            </div>
+            </form> 
+        </div>
+    </div>
+</div>
+{% endblock %}

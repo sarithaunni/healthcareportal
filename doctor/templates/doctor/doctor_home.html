@@ -1,0 +1,6 @@
+{% extends 'doctor/doctor_base.html' %}
+{% block doctor %}
+<h1>Doctor Home</h1>
+{{ request.user.is_authenticated }}
+
+ {% endblock %}

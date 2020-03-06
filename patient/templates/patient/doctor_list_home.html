@@ -1,0 +1,27 @@
+{% extends 'patient/patient_base.html' %}
+{% block patient %}
+<div class="container mt-4">
+    <div class="row">
+        <form method="GET" action="">
+        <input type="text" name="t" class="form-control" placeholder="search here">
+    </form>
+        {% for dr in objectlist %}
+   <div class="col-lg-4">
+       <div class="card" style="width: 18rem;">
+           <div class="card-body">
+             <h5 class="card-title">{{dr.user.username}}</h5>
+             <p>{{ dr.email }}</p>
+             <p>{{ dr.hospitalname }}</p>
+             <p> {{ dr.specilized_in }}</p>
+             <p><img src={{ dr.photo.url }} width="50" height="50"></p>
+
+
+             
+           </div>
+         </div>
+   </div>
+   {% endfor %}
+</div>
+</div>
+      
+{% endblock %}

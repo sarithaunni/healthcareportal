@@ -1,0 +1,49 @@
+{% extends 'doctor/doctor_base.html' %}
+{% block doctor %}
+<div class="container mt-4">
+<div class="row">
+    <form method="GET" action="">
+      
+        <select name="s" id="s1">
+            <option value="all">All</option>
+            <option value="today">Today</option>
+            <option value="not_approved">Not_Approved</option>
+            <option value="approved">Approved</option>
+
+
+        </select>
+        <button type="submit">search</button>
+    </form>
+
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">NO</th>
+                            <th scope="col">Patient Name</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Status</th>
+
+
+                            
+              </tr>
+            </thead>
+            <tbody>
+                {% for dr_apnt in doctor_appoinment %}
+<tr>
+    <th scope="row">{{ forloop.counter }}</th>
+   <td> {{ dr_apnt }}</td>
+   <td> {{ dr_apnt.appoinmentdate }}</td>
+      <td> {{ dr_apnt.status }}</td>
+
+<td><a href="{% url 'update_appoinment' dr_apnt.pk %}" class="btn btn-success">Update</a></td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+
+      
+{% endblock %}

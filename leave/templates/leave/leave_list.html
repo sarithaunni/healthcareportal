@@ -1,0 +1,26 @@
+{% extends 'doctor/doctor_base.html' %}
+{% block doctor %}
+<div class="container mt-4">
+    <div class="row">
+        <p><a href="{% url 'leave' %}" class="btn btn-primary">Apply Leave</a></p>
+        {% for leavelist in leave %}
+   <div class="col-lg-4">
+       <div class="card" style="width: 18rem;">
+           <div class="card-body">
+             <h5 class="card-title">{{leavelist.fromname}}</h5>
+             <p>{{ leavelist.to }}</p>
+             <p>{{ leavelist.department }}</p>
+             <p> {{ leavelist.date }}</p>
+             <p> {{ leavelist.reason }}</p>
+
+             <p><a href="{% url 'leave_delete' leavelist.pk %}" class="btn btn-danger">Delete</a></p>
+
+             
+           </div>
+         </div>
+   </div>
+   {% endfor %}
+</div>
+</div>
+      
+{% endblock %}
