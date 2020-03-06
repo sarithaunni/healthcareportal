@@ -5,7 +5,7 @@ from patient.forms import PatientForm
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from appoinments.models import Appoinment
-# Create your views here.
+
 
 class PatientCreate(CreateView):
     model=Patient
